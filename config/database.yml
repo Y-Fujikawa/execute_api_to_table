@@ -1,0 +1,13 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool:  5
+  idle_timeout: 60
+  checkout_timeout: 3
+
+development:
+  <<: *default
+  host:     <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  database: <%= ENV["DB_NAME"] %>
